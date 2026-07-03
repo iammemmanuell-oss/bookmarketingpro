@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Book Marketing Agency Pro | Launch, Trend, and Sell More Books" },
+      { title: "Book Marketing Agency Pro | Professional Author Services" },
       {
         name: "description",
         content:
           "Book Marketing Agency Pro helps authors self publish, run high ROI ad campaigns, and hit bestseller lists. Formatting, Amazon PPC, Meta ads, and BookTok outreach.",
       },
-      { property: "og:title", content: "Book Marketing Agency Pro" },
+      { property: "og:title", content: "Book Marketing Agency Pro | Professional Author Services" },
       {
         property: "og:description",
         content:
@@ -94,6 +94,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Book Marketing Agency Pro | Professional Author Services" },
+      { name: "description", content: "Hire the ultimate book marketing agency for authors. We provide premium self-publishing setup, expert book promotions, and high-ROI Amazon PPC ads." },
+      { property: "og:description", content: "Hire the ultimate book marketing agency for authors. We provide premium self-publishing setup, expert book promotions, and high-ROI Amazon PPC ads." },
+      { name: "twitter:description", content: "Hire the ultimate book marketing agency for authors. We provide premium self-publishing setup, expert book promotions, and high-ROI Amazon PPC ads." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/06a32fd2-1d51-4ced-9ff7-336299a3c110" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/06a32fd2-1d51-4ced-9ff7-336299a3c110" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
