@@ -425,33 +425,38 @@ function Services() {
   );
 }
 
+import teamMdAsset from "@/assets/team-md.jpg.asset.json";
+import teamLpAsset from "@/assets/team-lp.jpg.asset.json";
+import teamDaAsset from "@/assets/team-da.jpg.asset.json";
+import teamBfAsset from "@/assets/team-bf.png.asset.json";
+
 const TEAM = [
   {
     role: "Managing Director",
     tag: "Strategy & Onboarding Anchor",
     icon: Sparkles,
-    initials: "MD",
+    photo: teamMdAsset.url,
     bio: "Sets your launch plan, aligns genre positioning, and personally onboards every new author project.",
   },
   {
     role: "Lead Book Publicist",
     tag: "Media, Podcasts & BookTok Outreach",
     icon: Megaphone,
-    initials: "LP",
+    photo: teamLpAsset.url,
     bio: "Runs your press outreach — podcasts, review sites, and vetted BookTok creator campaigns.",
   },
   {
     role: "Head of Digital Ads",
     tag: "Paid Traffic & PPC Optimization",
     icon: Target,
-    initials: "DA",
+    photo: teamDaAsset.url,
     bio: "Owns Amazon PPC and Meta ad strategy, optimizing daily for ACoS and profitable scale.",
   },
   {
     role: "Senior Book Formatter",
     tag: "Elite Cover & Print Typography",
     icon: Palette,
-    initials: "BF",
+    photo: teamBfAsset.url,
     bio: "Handles print & eBook interior layout plus cover art direction to publishing-house standards.",
   },
 ];
@@ -480,8 +485,13 @@ function Team() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-emerald-brand/40 hover:bg-white/[0.06]"
             >
               <div className="relative">
-                <div className="flex size-16 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-brand to-emerald-brand/70 text-lg font-extrabold text-white shadow-emerald">
-                  {m.initials}
+                <div className="aspect-square w-full overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+                  <img
+                    src={m.photo}
+                    alt={m.role}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="mt-6 flex items-center gap-2">
                   <m.icon className="size-4 text-emerald-brand" />
