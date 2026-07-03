@@ -485,8 +485,13 @@ function Team() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-emerald-brand/40 hover:bg-white/[0.06]"
             >
               <div className="relative">
-                <div className="flex size-16 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-brand to-emerald-brand/70 text-lg font-extrabold text-white shadow-emerald">
-                  {m.initials}
+                <div className="aspect-square w-full overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+                  <img
+                    src={m.photo}
+                    alt={m.role}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="mt-6 flex items-center gap-2">
                   <m.icon className="size-4 text-emerald-brand" />
