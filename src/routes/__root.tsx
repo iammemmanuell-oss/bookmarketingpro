@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -77,17 +80,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Book Marketing Agency Pro — Launch, Trend, and Sell More Books" },
+      { title: "Book Marketing Agency Pro | Launch, Trend, and Sell More Books" },
       {
         name: "description",
         content:
-          "Book Marketing Agency Pro helps authors self-publish, run high-ROI ad campaigns, and hit bestseller lists. Formatting, Amazon PPC, Meta ads, and BookTok outreach.",
+          "Book Marketing Agency Pro helps authors self publish, run high ROI ad campaigns, and hit bestseller lists. Formatting, Amazon PPC, Meta ads, and BookTok outreach.",
       },
       { property: "og:title", content: "Book Marketing Agency Pro" },
       {
         property: "og:description",
         content:
-          "We help authors launch, trend, and sell more books — self-publishing setup, targeted ads, and author brand platforms.",
+          "We help authors launch, trend, and sell more books. Self publishing setup, targeted ads, and author brand platforms.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -128,8 +131,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="min-h-screen bg-white text-navy flex flex-col">
+        <SiteHeader />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+        <Toaster position="top-right" richColors />
+      </div>
     </QueryClientProvider>
   );
 }
