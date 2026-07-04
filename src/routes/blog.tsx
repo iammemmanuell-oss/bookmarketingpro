@@ -42,7 +42,9 @@ function BlogPage() {
                 key={p.slug}
                 className="group flex h-full flex-col border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-brand/40 hover:shadow-elegant"
               >
-                <div className="aspect-[16/9] w-full rounded-lg bg-gradient-to-br from-navy via-slate-800 to-emerald-brand/40" />
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-lg">
+                  <BlogArt category={p.category} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                </div>
                 <div className="mt-5 flex items-center justify-between text-xs">
                   <span className="rounded-full bg-emerald-brand/10 px-3 py-1 font-bold uppercase tracking-widest text-emerald-brand">
                     {p.category}
