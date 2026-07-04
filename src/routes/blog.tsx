@@ -4,6 +4,7 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock } from "lucide-react";
 import { POSTS } from "@/lib/blog-posts";
+import { BlogArt } from "@/components/BlogArt";
 
 export const Route = createFileRoute("/blog")({
   component: BlogPage,
