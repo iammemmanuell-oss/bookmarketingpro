@@ -381,12 +381,94 @@ function TestimonialsStrip() {
   );
 }
 
+function FeaturedLaunch() {
+  return (
+    <section className="bg-navy py-24 lg:py-32 relative overflow-hidden">
+      <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-emerald-brand/10 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-brand/30 bg-emerald-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-brand">
+            <Sparkles className="size-3.5" />
+            Featured Client Launch
+          </div>
+          <h2 className="mt-6 text-3xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Inside the launch of{" "}
+            <span className="text-emerald-brand">From The Window: The City of What Ifs</span> by Sanman Thapa.
+          </h2>
+          <p className="mt-5 text-lg text-slate-400 leading-relaxed">
+            A literary fiction launch built from the ground up. Cover, print, event marketing, distribution, and post launch reader campaigns. Here is what the launch actually looked like on the ground.
+          </p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-6 gap-4 auto-rows-[180px]">
+          <div className="col-span-6 sm:col-span-3 lg:col-span-2 row-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanPortrait.url} alt="Author Sanman Thapa holding his novel" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div className="col-span-6 sm:col-span-3 lg:col-span-4 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanThumbnail.url} alt="From The Window promotional artwork" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanCover.url} alt="From The Window book cover" loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanBookSnow.url} alt="Novel photographed outdoors in the snow" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div className="col-span-6 lg:col-span-4 row-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanGroup.url} alt="Book launch event with readers and family" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanTable.url} alt="Signing table with signed copies" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
+            <img src={sanmanCafe.url} alt="Meet the Author display at a local cafe" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_1fr] items-start">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 lg:p-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-brand">
+              <Star className="size-3.5 fill-emerald-brand" />
+              Verified 5 Star Review
+            </div>
+            <p className="mt-5 text-2xl font-extrabold text-white leading-snug">
+              &ldquo;It was great working with the service provider. I would definitely use them again.&rdquo;
+            </p>
+            <p className="mt-4 text-slate-400 leading-relaxed">
+              Sanman Thapa scored our team a perfect five across seller communication, quality of delivery, and value of delivery. Highlighted strengths: deep understanding, language fluency, politeness, proactive communication, exceeded expectations, professionalism of work, innovation, and attention to details.
+            </p>
+            <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+              <img src={sanmanPortrait.url} alt="Sanman Thapa" className="size-12 rounded-full object-cover object-top ring-2 ring-emerald-brand/40" />
+              <div>
+                <div className="font-bold text-white">Sanman Thapa</div>
+                <div className="text-sm text-slate-400">Author, From The Window: The City of What Ifs</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-white p-3 ring-1 ring-white/10 shadow-elegant">
+            <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 px-2 pt-1 pb-2">
+              Original review snapshot
+            </div>
+            <img
+              src={sanmanReview.url}
+              alt="Original 5 star review from Sanman Thapa"
+              loading="lazy"
+              className="w-full rounded-lg border border-slate-200"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
     <>
       <Hero />
       <Metrics />
       <ServicesTeaser />
+      <FeaturedLaunch />
       <TestimonialsStrip />
       <CtaBanner />
     </>
