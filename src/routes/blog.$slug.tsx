@@ -9,7 +9,7 @@ export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const post = getPost(params.slug);
     if (!post) throw notFound();
-    return { post };
+    return { post } as { post: NonNullable<ReturnType<typeof getPost>> };
   },
   head: ({ loaderData }) => ({
     meta: loaderData
