@@ -186,6 +186,7 @@ function AboutPage() {
                     alt={m.role}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ objectPosition: m.role === "Lead Book Publicist" ? "center 15%" : "center top" }}
                   />
                 </div>
                 <div className="mt-5 flex items-center gap-2">

@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, User } from "lucide-react";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Card } from "@/components/ui/card";
 import { getPost, POSTS, type BlogPost } from "@/lib/blog-posts";
+import { BlogArt } from "@/components/BlogArt";
 
 export const Route = createFileRoute("/blog/$slug")({
   component: BlogPostPage,
@@ -95,7 +96,9 @@ function BlogPostPage() {
             </div>
           </div>
 
-          <div className="mt-10 aspect-[16/9] w-full rounded-xl bg-gradient-to-br from-navy via-slate-800 to-emerald-brand/40" />
+          <div className="mt-10 aspect-[16/9] w-full overflow-hidden rounded-xl">
+            <BlogArt category={post.category} className="h-full w-full" />
+          </div>
 
           <div className="mt-12 space-y-10">
             <p className="text-xl text-slate-700 leading-relaxed font-medium">
