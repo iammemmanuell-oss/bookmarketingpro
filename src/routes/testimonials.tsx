@@ -25,6 +25,12 @@ export const Route = createFileRoute("/testimonials")({
 
 const ITEMS = [
   {
+    name: "Sanman Thapa",
+    book: "From The Window: The City of What Ifs",
+    quote:
+      "It was great working with the service provider. I would definitely use them again. Deep understanding, language fluency, politeness, proactive communication, exceeded expectations, professionalism of work, innovation, and attention to details. Every part of the engagement, from communication to delivery, was five stars.",
+  },
+  {
     name: "Elena Voss",
     book: "The Cartographer's Daughter",
     quote:

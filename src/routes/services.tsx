@@ -137,6 +137,19 @@ const SERVICES = [
 
 const PACKAGES = [
   {
+    name: "Starter",
+    price: "$1,850",
+    tag: "For low budget and first time authors",
+    features: [
+      "30 day launch checklist",
+      "Amazon keyword and category setup",
+      "Amazon PPC starter campaigns (30 days)",
+      "Cover feedback and metadata polish",
+      "Email support",
+    ],
+    highlight: false,
+  },
+  {
     name: "Launch",
     price: "$4,500",
     tag: "Best for debut launches",
