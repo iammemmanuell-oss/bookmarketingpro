@@ -16,6 +16,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
+import sanmanPortrait from "@/assets/launch/sanman-portrait.jpg.asset.json";
+import sanmanThumbnail from "@/assets/launch/sanman-thumbnail.jpg.asset.json";
+import sanmanGroup from "@/assets/launch/sanman-group.jpg.asset.json";
+import sanmanTable from "@/assets/launch/sanman-table.jpg.asset.json";
+import sanmanCafe from "@/assets/launch/sanman-cafe.jpg.asset.json";
+import sanmanBookSnow from "@/assets/launch/sanman-book-snow.jpg.asset.json";
+import sanmanCover from "@/assets/launch/sanman-cover.jpg.asset.json";
+import sanmanReview from "@/assets/launch/sanman-review.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
