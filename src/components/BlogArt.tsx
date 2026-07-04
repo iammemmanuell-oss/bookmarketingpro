@@ -1,4 +1,4 @@
-import type { ComponentType, SVGProps } from "react";
+import type { ComponentType, ReactNode, SVGProps } from "react";
 
 type ArtProps = SVGProps<SVGSVGElement> & { className?: string };
 
@@ -8,7 +8,7 @@ function BaseArt({
   from,
   to,
   ...rest
-}: ArtProps & { gradId: string; from: string; to: string; children: React.ReactNode }) {
+}: ArtProps & { gradId: string; from: string; to: string; children: ReactNode }) {
   return (
     <svg
       viewBox="0 0 400 225"
