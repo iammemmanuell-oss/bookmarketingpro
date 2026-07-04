@@ -137,6 +137,19 @@ const SERVICES = [
 
 const PACKAGES = [
   {
+    name: "Starter",
+    price: "$1,850",
+    tag: "For low budget and first time authors",
+    features: [
+      "30 day launch checklist",
+      "Amazon keyword and category setup",
+      "Amazon PPC starter campaigns (30 days)",
+      "Cover feedback and metadata polish",
+      "Email support",
+    ],
+    highlight: false,
+  },
+  {
     name: "Launch",
     price: "$4,500",
     tag: "Best for debut launches",
@@ -231,7 +244,7 @@ function ServicesPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {PACKAGES.map((p) => (
               <Card
                 key={p.name}

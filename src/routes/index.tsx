@@ -307,21 +307,24 @@ function ServicesTeaser() {
 const TESTIMONIALS = [
   {
     quote:
+      "It was great working with the service provider. I would definitely use them again. Deep understanding, language fluency, politeness, proactive communication, and real attention to details.",
+    name: "Sanman Thapa",
+    book: "From The Window: The City of What Ifs",
+    rating: 5,
+  },
+  {
+    quote:
       "They took my finished manuscript and turned it into a category bestseller in under six weeks. The ad management alone paid for itself.",
     name: "Elena Voss",
     book: "The Cartographer's Daughter",
+    rating: 5,
   },
   {
     quote:
       "Finally an agency that actually understands publishing. The BookTok outreach put my novel in front of the right readers.",
     name: "Marcus Reid",
     book: "Signal Lost",
-  },
-  {
-    quote:
-      "Weekly reporting, transparent decisions, and real results. I cleared 30k copies in the first quarter after launch.",
-    name: "Priya Anand",
-    book: "The Ledger of Small Wins",
+    rating: 5,
   },
 ];
 
