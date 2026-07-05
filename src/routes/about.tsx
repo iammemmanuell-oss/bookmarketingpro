@@ -185,8 +185,8 @@ function AboutPage() {
                     src={m.photo}
                     alt={m.role}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ objectPosition: m.role === "Lead Book Publicist" ? "center 15%" : "center top" }}
+                    decoding="async"
+                    className="h-full w-full object-contain p-2"
                   />
                 </div>
                 <div className="mt-5 flex items-center gap-2">

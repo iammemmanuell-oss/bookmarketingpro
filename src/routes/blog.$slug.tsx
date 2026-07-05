@@ -100,13 +100,31 @@ function BlogPostPage() {
             <BlogArt category={post.category} className="h-full w-full" />
           </div>
 
+          <nav aria-label="Article sections" className="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
+            <div className="text-sm font-bold uppercase tracking-widest text-emerald-brand">
+              In this article
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {post.content.sections.map((section, index) => (
+                <a
+                  key={section.heading}
+                  href={`#section-${index + 1}`}
+                  className="group flex items-center justify-between rounded-lg bg-white px-4 py-3 text-sm font-bold text-navy ring-1 ring-slate-200 transition-all hover:text-emerald-brand hover:ring-emerald-brand/40"
+                >
+                  {section.heading}
+                  <ArrowRight className="size-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-emerald-brand" />
+                </a>
+              ))}
+            </div>
+          </nav>
+
           <div className="mt-12 space-y-10">
             <p className="text-xl text-slate-700 leading-relaxed font-medium">
               {post.content.intro}
             </p>
 
-            {post.content.sections.map((s) => (
-              <section key={s.heading}>
+            {post.content.sections.map((s, index) => (
+              <section key={s.heading} id={`section-${index + 1}`} className="scroll-mt-28">
                 <h2 className="text-2xl lg:text-3xl font-extrabold text-navy tracking-tight">
                   {s.heading}
                 </h2>
@@ -144,28 +162,28 @@ function BlogPostPage() {
           </h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {related.map((p) => (
-              <Card
+              <Link
                 key={p.slug}
-                className="group flex h-full flex-col border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-brand/40 hover:shadow-elegant"
+                to="/blog/$slug"
+                params={{ slug: p.slug }}
+                className="group block h-full"
               >
-                <span className="w-fit rounded-full bg-emerald-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-brand">
-                  {p.category}
-                </span>
-                <h3 className="mt-4 text-lg font-extrabold text-navy leading-snug">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  {p.excerpt}
-                </p>
-                <Link
-                  to="/blog/$slug"
-                  params={{ slug: p.slug }}
-                  className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-bold text-emerald-brand transition-all hover:gap-3"
-                >
-                  Read more
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Card>
+                <Card className="flex h-full flex-col border-slate-200 bg-white p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-emerald-brand/40 group-hover:shadow-elegant">
+                  <span className="w-fit rounded-full bg-emerald-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-brand">
+                    {p.category}
+                  </span>
+                  <h3 className="mt-4 text-lg font-extrabold text-navy leading-snug">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    {p.excerpt}
+                  </p>
+                  <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-bold text-emerald-brand transition-all group-hover:gap-3">
+                    Read more
+                    <ArrowRight className="size-4" />
+                  </span>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
