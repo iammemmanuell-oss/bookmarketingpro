@@ -12,10 +12,6 @@ import {
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Card } from "@/components/ui/card";
-import teamMdAsset from "@/assets/team-md.jpg.asset.json";
-import teamLpAsset from "@/assets/team-lp.jpg.asset.json";
-import teamDaAsset from "@/assets/team-da.jpg.asset.json";
-import teamBfAsset from "@/assets/team-bf.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -64,28 +60,28 @@ const TEAM = [
     role: "Managing Director",
     tag: "Strategy and Onboarding",
     icon: Sparkles,
-    photo: teamMdAsset.url,
+    photo: "/assets/team-md.jpg",
     bio: "Sets your launch plan, aligns genre positioning, and personally onboards every new author project.",
   },
   {
     role: "Lead Book Publicist",
     tag: "Media, Podcasts and BookTok",
     icon: Megaphone,
-    photo: teamLpAsset.url,
+    photo: "/assets/team-lp.jpg",
     bio: "Runs press outreach across podcasts, review sites, and vetted BookTok creator campaigns.",
   },
   {
     role: "Head of Digital Ads",
     tag: "Paid Traffic and PPC",
     icon: Target,
-    photo: teamDaAsset.url,
+    photo: "/assets/team-da.jpg",
     bio: "Owns Amazon PPC and Meta ad strategy, optimizing daily for ACoS and profitable scale.",
   },
   {
     role: "Senior Book Formatter",
     tag: "Covers and Typography",
     icon: Palette,
-    photo: teamBfAsset.url,
+    photo: "/assets/team-bf.png",
     bio: "Handles print and eBook interior layout plus cover art direction to publishing house standards.",
   },
 ];
