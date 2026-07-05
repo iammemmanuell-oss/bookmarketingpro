@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
+import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
 import sanmanPortrait from "@/assets/launch/sanman-portrait.jpg.asset.json";
 import sanmanThumbnail from "@/assets/launch/sanman-thumbnail.jpg.asset.json";
 import sanmanGroup from "@/assets/launch/sanman-group.jpg.asset.json";
@@ -24,6 +25,24 @@ import sanmanCafe from "@/assets/launch/sanman-cafe.jpg.asset.json";
 import sanmanBookSnow from "@/assets/launch/sanman-book-snow.jpg.asset.json";
 import sanmanCover from "@/assets/launch/sanman-cover.jpg.asset.json";
 import sanmanReview from "@/assets/launch/sanman-review.png.asset.json";
+import sanmanPortrait360 from "@/assets/launch/responsive/sanman-portrait-360.webp.asset.json";
+import sanmanPortrait560 from "@/assets/launch/responsive/sanman-portrait-560.webp.asset.json";
+import sanmanThumbnail640 from "@/assets/launch/responsive/sanman-thumbnail-640.webp.asset.json";
+import sanmanThumbnail960 from "@/assets/launch/responsive/sanman-thumbnail-960.webp.asset.json";
+import sanmanThumbnail1280 from "@/assets/launch/responsive/sanman-thumbnail-1280.webp.asset.json";
+import sanmanGroup640 from "@/assets/launch/responsive/sanman-group-640.webp.asset.json";
+import sanmanGroup960 from "@/assets/launch/responsive/sanman-group-960.webp.asset.json";
+import sanmanGroup1440 from "@/assets/launch/responsive/sanman-group-1440.webp.asset.json";
+import sanmanTable640 from "@/assets/launch/responsive/sanman-table-640.webp.asset.json";
+import sanmanTable960 from "@/assets/launch/responsive/sanman-table-960.webp.asset.json";
+import sanmanTable1440 from "@/assets/launch/responsive/sanman-table-1440.webp.asset.json";
+import sanmanCafe640 from "@/assets/launch/responsive/sanman-cafe-640.webp.asset.json";
+import sanmanCafe960 from "@/assets/launch/responsive/sanman-cafe-960.webp.asset.json";
+import sanmanCafe1440 from "@/assets/launch/responsive/sanman-cafe-1440.webp.asset.json";
+import sanmanCover360 from "@/assets/launch/responsive/sanman-cover-360.webp.asset.json";
+import sanmanCover640 from "@/assets/launch/responsive/sanman-cover-640.webp.asset.json";
+import sanmanCover960 from "@/assets/launch/responsive/sanman-cover-960.webp.asset.json";
+import sanmanBookSnow320 from "@/assets/launch/responsive/sanman-book-snow-320.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -336,6 +355,41 @@ const TESTIMONIALS = [
   },
 ];
 
+const LAUNCH_SOURCES = {
+  portrait: [
+    { src: sanmanPortrait360, width: 360 },
+    { src: sanmanPortrait560, width: 560 },
+  ],
+  thumbnail: [
+    { src: sanmanThumbnail640, width: 640 },
+    { src: sanmanThumbnail960, width: 960 },
+    { src: sanmanThumbnail1280, width: 1280 },
+  ],
+  group: [
+    { src: sanmanGroup640, width: 640 },
+    { src: sanmanGroup960, width: 960 },
+    { src: sanmanGroup1440, width: 1440 },
+  ],
+  table: [
+    { src: sanmanTable640, width: 640 },
+    { src: sanmanTable960, width: 960 },
+    { src: sanmanTable1440, width: 1440 },
+  ],
+  cafe: [
+    { src: sanmanCafe640, width: 640 },
+    { src: sanmanCafe960, width: 960 },
+    { src: sanmanCafe1440, width: 1440 },
+  ],
+  cover: [
+    { src: sanmanCover360, width: 360 },
+    { src: sanmanCover640, width: 640 },
+    { src: sanmanCover960, width: 960 },
+  ],
+  bookSnow: [{ src: sanmanBookSnow320, width: 320 }],
+};
+
+const mosaicImageClass = "h-full w-full object-contain p-2";
+
 function TestimonialsStrip() {
   return (
     <section className="bg-white py-24 lg:py-32">
@@ -401,26 +455,26 @@ function FeaturedLaunch() {
         </div>
 
         <div className="mt-14 grid grid-cols-6 gap-4 auto-rows-[180px]">
-          <div className="col-span-6 sm:col-span-3 lg:col-span-2 row-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanPortrait.url} alt="Author Sanman Thapa holding his novel" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-6 sm:col-span-3 lg:col-span-2 row-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanPortrait} sources={LAUNCH_SOURCES.portrait} sizes="(min-width: 1024px) 28vw, (min-width: 640px) 50vw, 100vw" width={695} height={1321} alt="Author Sanman Thapa holding his novel" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
-          <div className="col-span-6 sm:col-span-3 lg:col-span-4 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanThumbnail.url} alt="From The Window promotional artwork" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-6 sm:col-span-3 lg:col-span-4 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanThumbnail} sources={LAUNCH_SOURCES.thumbnail} sizes="(min-width: 1024px) 58vw, (min-width: 640px) 50vw, 100vw" width={1280} height={720} alt="From The Window promotional artwork" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanCover.url} alt="From The Window book cover" loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanCover} sources={LAUNCH_SOURCES.cover} sizes="(min-width: 1024px) 28vw, 50vw" width={1203} height={1920} alt="From The Window book cover" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanBookSnow.url} alt="Novel photographed outdoors in the snow" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanBookSnow} sources={LAUNCH_SOURCES.bookSnow} sizes="(min-width: 1024px) 28vw, 50vw" width={360} height={640} alt="Novel photographed outdoors in the snow" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
-          <div className="col-span-6 lg:col-span-4 row-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanGroup.url} alt="Book launch event with readers and family" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-6 lg:col-span-4 row-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanGroup} sources={LAUNCH_SOURCES.group} sizes="(min-width: 1024px) 58vw, 100vw" width={1920} height={1080} alt="Book launch event with readers and family" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanTable.url} alt="Signing table with signed copies" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanTable} sources={LAUNCH_SOURCES.table} sizes="(min-width: 1024px) 28vw, 50vw" width={1920} height={1080} alt="Signing table with signed copies" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl ring-1 ring-white/10 group">
-            <img src={sanmanCafe.url} alt="Meet the Author display at a local cafe" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
+            <ResponsiveAssetImage src={sanmanCafe} sources={LAUNCH_SOURCES.cafe} sizes="(min-width: 1024px) 28vw, 50vw" width={1920} height={1080} alt="Meet the Author display at a local cafe" pictureClassName="block h-full w-full" className={mosaicImageClass} />
           </div>
         </div>
 
@@ -437,7 +491,7 @@ function FeaturedLaunch() {
               Sanman Thapa scored our team a perfect five across seller communication, quality of delivery, and value of delivery. Highlighted strengths: deep understanding, language fluency, politeness, proactive communication, exceeded expectations, professionalism of work, innovation, and attention to details.
             </p>
             <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-              <img src={sanmanPortrait.url} alt="Sanman Thapa" className="size-12 rounded-full object-cover object-top ring-2 ring-emerald-brand/40" />
+              <ResponsiveAssetImage src={sanmanPortrait} sources={LAUNCH_SOURCES.portrait} sizes="48px" width={695} height={1321} alt="Sanman Thapa" pictureClassName="block size-12 shrink-0 overflow-hidden rounded-full bg-white/10 ring-2 ring-emerald-brand/40" className="h-full w-full object-contain" />
               <div>
                 <div className="font-bold text-white">Sanman Thapa</div>
                 <div className="text-sm text-slate-400">Author, From The Window: The City of What Ifs</div>
@@ -453,6 +507,9 @@ function FeaturedLaunch() {
               src={sanmanReview.url}
               alt="Original 5 star review from Sanman Thapa"
               loading="lazy"
+              decoding="async"
+              width={634}
+              height={280}
               className="w-full rounded-lg border border-slate-200"
             />
           </div>
