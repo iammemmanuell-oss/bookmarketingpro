@@ -388,7 +388,64 @@ const LAUNCH_SOURCES = {
   bookSnow: [{ src: sanmanBookSnow320, width: 320 }],
 };
 
-const mosaicImageClass = "h-full w-full object-contain p-2";
+const launchImages = [
+  {
+    src: sanmanPortrait,
+    sources: LAUNCH_SOURCES.portrait,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 695,
+    height: 1321,
+    alt: "Author Sanman Thapa holding his novel",
+  },
+  {
+    src: sanmanThumbnail,
+    sources: LAUNCH_SOURCES.thumbnail,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 1280,
+    height: 720,
+    alt: "From The Window promotional artwork",
+  },
+  {
+    src: sanmanCover,
+    sources: LAUNCH_SOURCES.cover,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 1203,
+    height: 1920,
+    alt: "From The Window book cover",
+  },
+  {
+    src: sanmanBookSnow,
+    sources: LAUNCH_SOURCES.bookSnow,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 360,
+    height: 640,
+    alt: "Novel photographed outdoors in the snow",
+  },
+  {
+    src: sanmanGroup,
+    sources: LAUNCH_SOURCES.group,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 1920,
+    height: 1080,
+    alt: "Book launch event with readers and family",
+  },
+  {
+    src: sanmanTable,
+    sources: LAUNCH_SOURCES.table,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 1920,
+    height: 1080,
+    alt: "Signing table with signed copies",
+  },
+  {
+    src: sanmanCafe,
+    sources: LAUNCH_SOURCES.cafe,
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+    width: 1920,
+    height: 1080,
+    alt: "Meet the Author display at a local cafe",
+  },
+];
 
 function TestimonialsStrip() {
   return (
@@ -454,28 +511,24 @@ function FeaturedLaunch() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-6 gap-4 auto-rows-[180px]">
-          <div className="col-span-6 sm:col-span-3 lg:col-span-2 row-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanPortrait} sources={LAUNCH_SOURCES.portrait} sizes="(min-width: 1024px) 28vw, (min-width: 640px) 50vw, 100vw" width={695} height={1321} alt="Author Sanman Thapa holding his novel" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
-          <div className="col-span-6 sm:col-span-3 lg:col-span-4 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanThumbnail} sources={LAUNCH_SOURCES.thumbnail} sizes="(min-width: 1024px) 58vw, (min-width: 640px) 50vw, 100vw" width={1280} height={720} alt="From The Window promotional artwork" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanCover} sources={LAUNCH_SOURCES.cover} sizes="(min-width: 1024px) 28vw, 50vw" width={1203} height={1920} alt="From The Window book cover" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanBookSnow} sources={LAUNCH_SOURCES.bookSnow} sizes="(min-width: 1024px) 28vw, 50vw" width={360} height={640} alt="Novel photographed outdoors in the snow" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
-          <div className="col-span-6 lg:col-span-4 row-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanGroup} sources={LAUNCH_SOURCES.group} sizes="(min-width: 1024px) 58vw, 100vw" width={1920} height={1080} alt="Book launch event with readers and family" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanTable} sources={LAUNCH_SOURCES.table} sizes="(min-width: 1024px) 28vw, 50vw" width={1920} height={1080} alt="Signing table with signed copies" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
-          <div className="col-span-3 lg:col-span-2 overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10">
-            <ResponsiveAssetImage src={sanmanCafe} sources={LAUNCH_SOURCES.cafe} sizes="(min-width: 1024px) 28vw, 50vw" width={1920} height={1080} alt="Meet the Author display at a local cafe" pictureClassName="block h-full w-full" className={mosaicImageClass} />
-          </div>
+        <div className="mt-14 columns-1 gap-4 sm:columns-2 lg:columns-3">
+          {launchImages.map((image) => (
+            <div
+              key={image.alt}
+              className="mb-4 break-inside-avoid overflow-hidden rounded-2xl bg-white/[0.04] p-2 ring-1 ring-white/10 transition-all duration-300 hover:bg-white/[0.07] hover:ring-emerald-brand/30"
+            >
+              <ResponsiveAssetImage
+                src={image.src}
+                sources={image.sources}
+                sizes={image.sizes}
+                width={image.width}
+                height={image.height}
+                alt={image.alt}
+                pictureClassName="block w-full"
+                className="h-auto w-full rounded-xl"
+              />
+            </div>
+          ))}
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_1fr] items-start">
