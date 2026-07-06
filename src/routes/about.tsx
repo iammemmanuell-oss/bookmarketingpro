@@ -92,7 +92,7 @@ function AboutPage() {
       <PageHeader
         eyebrow="About the Agency"
         title="A lean team of publishing heavyweights."
-        description="We started Book Marketing Agency Pro to fix a broken market. Authors were being sold generic marketing packages by agencies that had never actually launched a book. So we buil[...]
+        description="We started Book Marketing Agency Pro to fix a broken market. Authors were being sold generic marketing packages by agencies that had never actually launched a book. So we built a lean, senior team that treats every launch like our own."
       />
 
       <section className="bg-white py-24">
@@ -106,10 +106,10 @@ function AboutPage() {
             </h2>
             <div className="mt-6 space-y-4 text-slate-600 leading-relaxed">
               <p>
-                Book Marketing Agency Pro was founded in 2021 by a former traditional publisher and a self published author who together had launched more than 200 titles. What they kept seeing w[...]
+                Book Marketing Agency Pro was founded in 2021 by a former traditional publisher and a self published author who together had launched more than 200 titles. What they kept seeing was the same story from authors. Expensive retainers, vague deliverables, no measurable results.
               </p>
               <p>
-                So they built a small, senior, fully remote team focused on one outcome. Real sales for indie and hybrid authors. No junior account managers, no bloated retainers, no templated st[...]
+                So they built a small, senior, fully remote team focused on one outcome. Real sales for indie and hybrid authors. No junior account managers, no bloated retainers, no templated strategies dressed up as bespoke work.
               </p>
               <p>
                 Today we work with fiction and non fiction authors across the world, from debut novelists to career authors relaunching their backlist.
