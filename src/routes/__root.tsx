@@ -145,6 +145,22 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    function handleImageError(event: ErrorEvent) {
+      const target = event.target;
+      if (target instanceof HTMLImageElement) {
+        console.error("Image failed to load:", {
+          failingUrl: target.currentSrc || target.src,
+          alt: target.alt,
+          page: window.location.href,
+        });
+      }
+    }
+
+    window.addEventListener("error", handleImageError, true);
+    return () => window.removeEventListener("error", handleImageError, true);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-white text-navy flex flex-col">

@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
 import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
-import { getAssetUrl } from "@/lib/asset-url";
+import { getAssetUrl, getFallbackAssetUrl, logImageLoadFailure } from "@/lib/asset-url";
 import sanmanPortrait from "@/assets/launch/sanman-portrait.jpg.asset.json";
 import sanmanThumbnail from "@/assets/launch/sanman-thumbnail.jpg.asset.json";
 import sanmanGroup from "@/assets/launch/sanman-group.jpg.asset.json";
@@ -562,6 +562,14 @@ function FeaturedLaunch() {
               alt="Original 5 star review from Sanman Thapa"
               loading="lazy"
               decoding="async"
+              onError={(event) => {
+                const failingUrl = event.currentTarget.currentSrc || event.currentTarget.src;
+                const fallbackUrl = getFallbackAssetUrl(sanmanReview.url);
+                logImageLoadFailure(failingUrl, fallbackUrl);
+                if (event.currentTarget.src !== fallbackUrl) {
+                  event.currentTarget.src = fallbackUrl;
+                }
+              }}
               width={634}
               height={280}
               className="w-full rounded-lg border border-slate-200"
