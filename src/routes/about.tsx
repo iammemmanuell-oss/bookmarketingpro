@@ -12,7 +12,7 @@ import {
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Card } from "@/components/ui/card";
-import { getAssetUrl } from "@/lib/asset-url";
+import { getAssetUrl, getFallbackAssetUrl, logImageLoadFailure } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -183,6 +183,14 @@ function AboutPage() {
                     alt={m.role}
                     loading="lazy"
                     decoding="async"
+                    onError={(event) => {
+                      const failingUrl = event.currentTarget.currentSrc || event.currentTarget.src;
+                      const fallbackUrl = getFallbackAssetUrl(m.photo);
+                      logImageLoadFailure(failingUrl, fallbackUrl);
+                      if (event.currentTarget.src !== fallbackUrl) {
+                        event.currentTarget.src = fallbackUrl;
+                      }
+                    }}
                     className="h-full w-full object-contain p-2"
                   />
                 </div>

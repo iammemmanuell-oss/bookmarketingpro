@@ -1,5 +1,10 @@
-import type { ImgHTMLAttributes } from "react";
-import { getAssetUrl } from "@/lib/asset-url";
+import { useState, type ImgHTMLAttributes, type SyntheticEvent } from "react";
+import {
+  getAssetUrl,
+  getFallbackAssetUrl,
+  hasFallbackAssetUrl,
+  logImageLoadFailure,
+} from "@/lib/asset-url";
 
 export type AssetPointer = {
   url: string;
@@ -27,14 +32,35 @@ export function ResponsiveAssetImage({
   pictureClassName,
   loading = "lazy",
   decoding = "async",
+  onError,
   ...imgProps
 }: ResponsiveAssetImageProps) {
-  const srcSet = sources.map((source) => `${getAssetUrl(source.src.url)} ${source.width}w`).join(", ");
+  const [useFallback, setUseFallback] = useState(false);
+  const toUrl = useFallback ? getFallbackAssetUrl : getAssetUrl;
+  const srcSet = sources.map((source) => `${toUrl(source.src.url)} ${source.width}w`).join(", ");
+
+  function handleError(event: SyntheticEvent<HTMLImageElement, Event>) {
+    const failingUrl = event.currentTarget.currentSrc || event.currentTarget.src;
+    const fallbackUrl = getFallbackAssetUrl(src.url);
+    logImageLoadFailure(failingUrl, fallbackUrl);
+
+    if (!useFallback && hasFallbackAssetUrl(src.url)) {
+      setUseFallback(true);
+    }
+
+    onError?.(event);
+  }
 
   return (
     <picture className={pictureClassName}>
       {srcSet && <source type="image/webp" srcSet={srcSet} sizes={sizes} />}
-      <img src={getAssetUrl(src.url)} loading={loading} decoding={decoding} {...imgProps} />
+      <img
+        src={toUrl(src.url)}
+        loading={loading}
+        decoding={decoding}
+        onError={handleError}
+        {...imgProps}
+      />
     </picture>
   );
 }
