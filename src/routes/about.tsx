@@ -12,6 +12,7 @@ import {
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Card } from "@/components/ui/card";
+import { getAssetUrl } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -178,11 +179,11 @@ function AboutPage() {
               >
                 <div className="aspect-square w-full overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
                   <img
-                    src={m.photo}
+                    src={getAssetUrl(m.photo)}
                     alt={m.role}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-2"
                   />
                 </div>
                 <div className="mt-5 flex items-center gap-2">

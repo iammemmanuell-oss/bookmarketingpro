@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
 import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
+import { getAssetUrl } from "@/lib/asset-url";
 import sanmanPortrait from "@/assets/launch/sanman-portrait.jpg.asset.json";
 import sanmanThumbnail from "@/assets/launch/sanman-thumbnail.jpg.asset.json";
 import sanmanGroup from "@/assets/launch/sanman-group.jpg.asset.json";
@@ -557,7 +558,7 @@ function FeaturedLaunch() {
               Original review snapshot
             </div>
             <img
-              src={sanmanReview.url}
+              src={getAssetUrl(sanmanReview.url)}
               alt="Original 5 star review from Sanman Thapa"
               loading="lazy"
               decoding="async"
