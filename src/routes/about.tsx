@@ -92,7 +92,7 @@ function AboutPage() {
       <PageHeader
         eyebrow="About the Agency"
         title="A lean team of publishing heavyweights."
-        description="We started Book Marketing Agency Pro to fix a broken market. Authors were being sold generic marketing packages by agencies that had never actually launched a book. So we buil[...]
+        description="We started Book Marketing Agency Pro to fix a broken market. Authors were being sold generic marketing packages by agencies that had never actually launched a book. So we built a lean, senior team that treats every launch like our own."
       />
 
       <section className="bg-white py-24">
