@@ -13,8 +13,8 @@ export const Route = createFileRoute("/__l5e/$")({
   server: {
     handlers: {
       OPTIONS: async () => new Response(null, { status: 204, headers: CORS_HEADERS }),
-      HEAD: async ({ params }) => proxyAsset(params._splat, "HEAD"),
-      GET: async ({ params }) => proxyAsset(params._splat, "GET"),
+      HEAD: async ({ params }) => proxyAsset(params._splat ?? "", "HEAD"),
+      GET: async ({ params }) => proxyAsset(params._splat ?? "", "GET"),
     },
   },
 });
