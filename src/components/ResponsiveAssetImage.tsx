@@ -1,4 +1,5 @@
 import type { ImgHTMLAttributes } from "react";
+import { getAssetUrl } from "@/lib/asset-url";
 
 export type AssetPointer = {
   url: string;
@@ -28,12 +29,12 @@ export function ResponsiveAssetImage({
   decoding = "async",
   ...imgProps
 }: ResponsiveAssetImageProps) {
-  const srcSet = sources.map((source) => `${source.src.url} ${source.width}w`).join(", ");
+  const srcSet = sources.map((source) => `${getAssetUrl(source.src.url)} ${source.width}w`).join(", ");
 
   return (
     <picture className={pictureClassName}>
       {srcSet && <source type="image/webp" srcSet={srcSet} sizes={sizes} />}
-      <img src={src.url} loading={loading} decoding={decoding} {...imgProps} />
+      <img src={getAssetUrl(src.url)} loading={loading} decoding={decoding} {...imgProps} />
     </picture>
   );
 }
