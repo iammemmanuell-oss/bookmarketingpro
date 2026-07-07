@@ -191,7 +191,7 @@ function AboutPage() {
                         event.currentTarget.src = fallbackUrl;
                       }
                     }}
-                    className="h-full w-full object-contain p-2"
+                    className="h-full w-full object-cover object-top"
                   />
                 </div>
                 <div className="mt-5 flex items-center gap-2">
