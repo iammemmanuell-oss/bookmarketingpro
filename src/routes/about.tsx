@@ -56,7 +56,16 @@ const VALUES = [
   },
 ];
 
-const TEAM = [
+interface TeamMember {
+  role: string;
+  tag: string;
+  icon: typeof Sparkles;
+  photo: string | null;
+  initials?: string;
+  bio: string;
+}
+
+const TEAM: TeamMember[] = [
   {
     role: "Managing Director",
     tag: "Strategy and Onboarding",
