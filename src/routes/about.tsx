@@ -68,7 +68,8 @@ const TEAM = [
     role: "Lead Book Publicist",
     tag: "Media, Podcasts and BookTok",
     icon: Megaphone,
-    photo: "/__l5e/assets-v1/c1f58ae7-a96c-4811-9a41-131b1c790f95/team-lp.jpg",
+    photo: null,
+    initials: "LB",
     bio: "Runs press outreach across podcasts, review sites, and vetted BookTok creator campaigns.",
   },
   {
