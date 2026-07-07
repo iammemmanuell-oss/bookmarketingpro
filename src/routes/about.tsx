@@ -56,7 +56,16 @@ const VALUES = [
   },
 ];
 
-const TEAM = [
+interface TeamMember {
+  role: string;
+  tag: string;
+  icon: typeof Sparkles;
+  photo: string | null;
+  initials?: string;
+  bio: string;
+}
+
+const TEAM: TeamMember[] = [
   {
     role: "Managing Director",
     tag: "Strategy and Onboarding",
@@ -68,7 +77,8 @@ const TEAM = [
     role: "Lead Book Publicist",
     tag: "Media, Podcasts and BookTok",
     icon: Megaphone,
-    photo: "/__l5e/assets-v1/c1f58ae7-a96c-4811-9a41-131b1c790f95/team-lp.jpg",
+    photo: null,
+    initials: "LB",
     bio: "Runs press outreach across podcasts, review sites, and vetted BookTok creator campaigns.",
   },
   {
@@ -178,21 +188,27 @@ function AboutPage() {
                 className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-emerald-brand/40 hover:bg-white/[0.06]"
               >
                 <div className="aspect-square w-full overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
-                  <img
-                    src={getAssetUrl(m.photo)}
-                    alt={m.role}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(event) => {
-                      const failingUrl = event.currentTarget.currentSrc || event.currentTarget.src;
-                      const fallbackUrl = getFallbackAssetUrl(m.photo);
-                      logImageLoadFailure(failingUrl, fallbackUrl);
-                      if (event.currentTarget.src !== fallbackUrl) {
-                        event.currentTarget.src = fallbackUrl;
-                      }
-                    }}
-                    className="h-full w-full object-cover object-top"
-                  />
+                  {m.photo ? (
+                    <img
+                      src={getAssetUrl(m.photo)}
+                      alt={m.role}
+                      loading="lazy"
+                      decoding="async"
+                      onError={(event) => {
+                        const failingUrl = event.currentTarget.currentSrc || event.currentTarget.src;
+                        const fallbackUrl = getFallbackAssetUrl(m.photo!);
+                        logImageLoadFailure(failingUrl, fallbackUrl);
+                        if (event.currentTarget.src !== fallbackUrl) {
+                          event.currentTarget.src = fallbackUrl;
+                        }
+                      }}
+                      className="h-full w-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-emerald-brand/20 text-4xl font-extrabold text-emerald-brand">
+                      {m.initials}
+                    </div>
+                  )}
                 </div>
                 <div className="mt-5 flex items-center gap-2">
                   <m.icon className="size-4 text-emerald-brand" />
