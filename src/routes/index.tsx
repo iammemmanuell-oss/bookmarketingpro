@@ -16,6 +16,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
+import { SubscribeSection } from "@/components/SubscribeSection";
+import { PastWorksTeaser } from "@/components/PastWorksTeaser";
 import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
 import { getAssetUrl, getFallbackAssetUrl, logImageLoadFailure } from "@/lib/asset-url";
 import sanmanPortrait from "@/assets/launch/sanman-portrait.jpg.asset.json";
@@ -588,7 +590,9 @@ function Index() {
       <Metrics />
       <ServicesTeaser />
       <FeaturedLaunch />
+      <PastWorksTeaser />
       <TestimonialsStrip />
+      <SubscribeSection />
       <CtaBanner />
     </>
   );

@@ -45,11 +45,18 @@ function ContactPage() {
     setSubmitting(true);
     const fd = new FormData(e.currentTarget);
     const name = String(fd.get("name") || "").trim();
+    const email = String(fd.get("email") || "").trim();
     const genre = String(fd.get("genre") || "").trim();
+    const currentStage = String(fd.get("stage") || stage).trim();
     const details = String(fd.get("details") || "").trim();
 
     if (!name || name.length > 100) {
       toast.error("Please enter a valid name.");
+      setSubmitting(false);
+      return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Please enter a valid email.");
       setSubmitting(false);
       return;
     }
@@ -64,12 +71,23 @@ function ContactPage() {
       return;
     }
 
+    const subject = `Free Blueprint Request — ${name}`;
+    const body =
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Genre: ${genre}\n` +
+      `Publishing Stage: ${currentStage}\n\n` +
+      `Project Details:\n${details}\n`;
+    const mailto = `mailto:emmanuel@bookmarketingagency.pro?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+
     setTimeout(() => {
-      toast.success("Strategy request received. We will be in touch within 24 hours.");
-      (e.target as HTMLFormElement).reset();
-      setStage("finished");
+      toast.success("Your email app should now open. Hit send and we'll reply within 24 hours with your blueprint.");
       setSubmitting(false);
-    }, 600);
+    }, 400);
   };
 
   return (
