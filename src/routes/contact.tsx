@@ -90,7 +90,7 @@ function ContactPage() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-500">Email</div>
-                  <div className="font-bold text-navy">hello@bookmarketingagency.pro</div>
+                  <div className="font-bold text-navy">emmanuel@bookmarketingagency.pro</div>
                 </div>
               </div>
             </Card>
