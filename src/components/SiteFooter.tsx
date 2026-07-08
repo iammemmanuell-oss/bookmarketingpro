@@ -15,7 +15,7 @@ export function SiteFooter() {
             <div className="mt-5 space-y-2 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <Mail className="size-4 text-emerald-brand" />
-                hello@bookmarketingagency.pro
+                emmanuel@bookmarketingagency.pro
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="size-4 text-emerald-brand" />

@@ -65,7 +65,7 @@ function TermsPage() {
 
           <h2 className="mt-8 text-2xl font-extrabold text-navy">Contact</h2>
           <p className="mt-3 text-slate-600 leading-relaxed">
-            Questions about these terms can be sent to hello@bookmarketingagency.pro.
+            Questions about these terms can be sent to emmanuel@bookmarketingagency.pro.
           </p>
         </div>
       </section>
