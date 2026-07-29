@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About | Book Marketing Agency Pro" },
+      { title: "About | "Book Marketing Agency Pro" },
       {
         name: "description",
         content:
