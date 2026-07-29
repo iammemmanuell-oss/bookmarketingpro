@@ -68,6 +68,7 @@ interface TeamMember {
 const TEAM: TeamMember[] = [
   {
     role: "Managing Director",
+    Name: "Emmanuel",
     tag: "Strategy and Onboarding",
     icon: Sparkles,
     photo: "/__l5e/assets-v1/eeb1407f-819c-4834-a3bd-4ace0fae0668/team-md.jpg",
@@ -75,6 +76,7 @@ const TEAM: TeamMember[] = [
   },
   {
     role: "Lead Book Publicist",
+    Name: "Ebenezer",
     tag: "Media, Podcasts and BookTok",
     icon: Megaphone,
     photo: null,
@@ -83,6 +85,7 @@ const TEAM: TeamMember[] = [
   },
   {
     role: "Head of Digital Ads",
+    Name: Mary",
     tag: "Paid Traffic and PPC",
     icon: Target,
     photo: "/__l5e/assets-v1/b120e6ad-0df0-4168-bdc4-069004f5df08/team-da.jpg",
@@ -90,6 +93,7 @@ const TEAM: TeamMember[] = [
   },
   {
     role: "Senior Book Formatter",
+    Name: "Blessing",
     tag: "Covers and Typography",
     icon: Palette,
     photo: "/__l5e/assets-v1/f2cb6820-6965-4cd6-b36d-075dcc8d49b7/team-bf.png",
