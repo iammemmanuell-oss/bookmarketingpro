@@ -18,8 +18,6 @@ import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SubscribeSection } from "@/components/SubscribeSection";
 import { PastWorksTeaser } from "@/components/PastWorksTeaser";
-import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
-import { getAssetUrl, getFallbackAssetUrl, logImageLoadFailure } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/")({
   component: Index,
