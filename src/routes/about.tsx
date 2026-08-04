@@ -1,24 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Sparkles,
-  Megaphone,
-  Target,
-  Palette,
-  Heart,
-  Compass,
-  Shield,
-  Zap,
-} from "lucide-react";
+import { Heart, Compass, Shield, Zap } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Card } from "@/components/ui/card";
-import { getAssetUrl, getFallbackAssetUrl, logImageLoadFailure } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About | "Book Marketing Agency Pro" },
+      { title: "About | Book Marketing Agency Pro" },
       {
         name: "description",
         content:
@@ -56,58 +46,13 @@ const VALUES = [
   },
 ];
 
-interface TeamMember {
-  role: string;
-  tag: string;
-  icon: typeof Sparkles;
-  photo: string | null;
-  initials?: string;
-  bio: string;
-}
-
-const TEAM: TeamMember[] = [
-  {
-    role: "Managing Director",
-    Name: "Emmanuel",
-    tag: "Strategy and Onboarding",
-    icon: Sparkles,
-    photo: "/__l5e/assets-v1/eeb1407f-819c-4834-a3bd-4ace0fae0668/team-md.jpg",
-    bio: "Sets your launch plan, aligns genre positioning, and personally onboards every new author project.",
-  },
-  {
-    role: "Lead Book Publicist",
-    Name: "Ebenezer",
-    tag: "Media, Podcasts and BookTok",
-    icon: Megaphone,
-    photo: null,
-    initials: "LB",
-    bio: "Runs press outreach across podcasts, review sites, and vetted BookTok creator campaigns.",
-  },
-  {
-    role: "Head of Digital Ads",
-    Name: Mary",
-    tag: "Paid Traffic and PPC",
-    icon: Target,
-    photo: "/__l5e/assets-v1/b120e6ad-0df0-4168-bdc4-069004f5df08/team-da.jpg",
-    bio: "Owns Amazon PPC and Meta ad strategy, optimizing daily for ACoS and profitable scale.",
-  },
-  {
-    role: "Senior Book Formatter",
-    Name: "Blessing",
-    tag: "Covers and Typography",
-    icon: Palette,
-    photo: "/__l5e/assets-v1/f2cb6820-6965-4cd6-b36d-075dcc8d49b7/team-bf.png",
-    bio: "Handles print and eBook interior layout plus cover art direction to publishing house standards.",
-  },
-];
-
 function AboutPage() {
   return (
     <>
       <PageHeader
         eyebrow="About the Agency"
         title="A lean team of publishing heavyweights."
-        description="We started Book Marketing Agency Pro to fix a broken market. Authors were being sold generic marketing packages by agencies that had never actually launched a book. So we built a lean, senior team that treats every launch like our own."
+        description="We started Book Marketing Agency Pro to fix a broken market. Authors were being sold generic marketing packages by agencies that had never actually launched a book. So we built a lean, senior operation that treats every launch like our own."
       />
 
       <section className="bg-white py-24">
@@ -170,60 +115,6 @@ function AboutPage() {
                 <h3 className="mt-5 text-lg font-extrabold text-navy">{v.title}</h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{v.desc}</p>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-navy py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
-            <div className="text-sm font-bold uppercase tracking-widest text-emerald-brand">
-              The Team
-            </div>
-            <h2 className="mt-3 text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
-              The four specialists behind every account.
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {TEAM.map((m) => (
-              <div
-                key={m.role}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-emerald-brand/40 hover:bg-white/[0.06]"
-              >
-                <div className="aspect-square w-full overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
-                  {m.photo ? (
-                    <img
-                      src={getAssetUrl(m.photo)}
-                      alt={m.role}
-                      loading="lazy"
-                      decoding="async"
-                      onError={(event) => {
-                        const failingUrl = event.currentTarget.currentSrc || event.currentTarget.src;
-                        const fallbackUrl = getFallbackAssetUrl(m.photo!);
-                        logImageLoadFailure(failingUrl, fallbackUrl);
-                        if (event.currentTarget.src !== fallbackUrl) {
-                          event.currentTarget.src = fallbackUrl;
-                        }
-                      }}
-                      className="h-full w-full object-cover object-top"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-emerald-brand/20 text-4xl font-extrabold text-emerald-brand">
-                      {m.initials}
-                    </div>
-                  )}
-                </div>
-                <div className="mt-5 flex items-center gap-2">
-                  <m.icon className="size-4 text-emerald-brand" />
-                  <div className="text-xs font-bold uppercase tracking-widest text-emerald-brand">
-                    Core Team
-                  </div>
-                </div>
-                <h3 className="mt-2 text-lg font-extrabold text-white">{m.role}</h3>
-                <div className="mt-1 text-sm font-medium text-slate-400">{m.tag}</div>
-                <p className="mt-3 text-sm text-slate-300 leading-relaxed">{m.bio}</p>
-              </div>
             ))}
           </div>
         </div>
