@@ -78,7 +78,7 @@ function ContactPage() {
       `Genre: ${genre}\n` +
       `Publishing Stage: ${currentStage}\n\n` +
       `Project Details:\n${details}\n`;
-    const mailto = `mailto:emmanuel@bookmarketingagency.pro?subject=${encodeURIComponent(
+    const mailto = `mailto:emmanuel@hq360.space?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
 
@@ -108,7 +108,7 @@ function ContactPage() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-500">Email</div>
-                  <div className="font-bold text-navy">emmanuel@bookmarketingagency.pro</div>
+                  <div className="font-bold text-navy">emmanuel@hq360.space</div>
                 </div>
               </div>
             </Card>

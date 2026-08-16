@@ -21,7 +21,7 @@ export function SubscribeSection() {
       `A new author wants to join the Book Marketing Agency Pro list.\n\n` +
       `Email: ${email}\n\n` +
       `Please add them to the insider list and send the welcome pack.`;
-    window.location.href = `mailto:emmanuel@bookmarketingagency.pro?subject=${encodeURIComponent(
+    window.location.href = `mailto:emmanuel@hq360.space?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
     setTimeout(() => {
