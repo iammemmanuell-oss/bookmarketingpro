@@ -151,7 +151,7 @@ const PACKAGES = [
   },
   {
     name: "Launch",
-    price: "$4,300",
+    price: "$1,200",
     tag: "Best for debut launches",
     features: [
       "90 day launch blueprint",
