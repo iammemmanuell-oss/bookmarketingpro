@@ -93,7 +93,7 @@ function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
-            {["No lock in contracts", "ROI focused", "Full transparency"].map((t) => (
+            {["Verified results, never a test", "Fixed pricing from $400", "Reply within 24 hours"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-emerald-brand" />
                 {t}
