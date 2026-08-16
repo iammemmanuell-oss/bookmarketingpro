@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router";
-import { BadgeCheck, PhoneCall, Mail, ShieldCheck } from "lucide-react";
+import { BadgeCheck, PhoneCall, MessageCircle, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
 import mdPhoto from "@/assets/managing-director.png.asset.json";
@@ -10,7 +9,7 @@ export function ManagingDirector() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
         <div className="relative mx-auto w-full max-w-sm">
           <div className="absolute -inset-3 rounded-3xl bg-emerald-brand/15 blur-2xl" />
-          <div className="relative overflow-hidden rounded-3xl border border-emerald-brand/30 bg-white">
+          <div className="relative overflow-hidden rounded-3xl border border-emerald-brand/30 bg-navy">
             <ResponsiveAssetImage
               src={mdPhoto}
               alt="Emmanuel Durosinmi, Managing Director of Book Marketing Agency Pro"
@@ -59,16 +58,20 @@ export function ManagingDirector() {
                 Contact Me For A Call
               </Button>
             </a>
-            <Link to="/contact">
+            <a
+              href="https://wa.me/2349013693083?text=Hi%20Emmanuel%2C%20I%20want%20to%20market%20my%20book."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
                 variant="outline"
-                className="h-12 px-7 bg-transparent border-slate-600 text-white hover:bg-white/5 hover:text-white font-semibold text-base"
+                className="h-12 px-7 bg-transparent border-emerald-brand/50 text-white hover:bg-emerald-brand/10 hover:text-white font-semibold text-base"
               >
-                <Mail className="size-4" />
-                Send A Message
+                <MessageCircle className="size-4" />
+                Send A Message On WhatsApp
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
