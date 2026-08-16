@@ -62,7 +62,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-brand/30 bg-emerald-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-brand">
             <Sparkles className="size-3.5" />
-            Trusted by 500+ authors worldwide
+            Verified results for 500+ authors worldwide
           </div>
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.05]">
             We Help Authors{" "}
