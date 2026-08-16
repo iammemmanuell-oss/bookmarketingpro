@@ -138,7 +138,7 @@ const SERVICES = [
 const PACKAGES = [
   {
     name: "Starter",
-    price: "$1,650",
+    price: "$400",
     tag: "For low budget and first time authors",
     features: [
       "30 day launch checklist",
