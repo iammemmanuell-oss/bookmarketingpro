@@ -374,8 +374,11 @@ function TestimonialsStrip() {
 function Index() {
   return (
     <>
+      <LeadPopup />
       <Hero />
       <Metrics />
+      <VerifiedStrip />
+      <ManagingDirector />
       <ServicesTeaser />
       <PastWorksTeaser />
       <TestimonialsStrip />
