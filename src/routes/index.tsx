@@ -18,6 +18,9 @@ import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SubscribeSection } from "@/components/SubscribeSection";
 import { PastWorksTeaser } from "@/components/PastWorksTeaser";
+import { ManagingDirector } from "@/components/ManagingDirector";
+import { VerifiedStrip } from "@/components/VerifiedStrip";
+import { LeadPopup } from "@/components/LeadPopup";
 
 export const Route = createFileRoute("/")({
   component: Index,
