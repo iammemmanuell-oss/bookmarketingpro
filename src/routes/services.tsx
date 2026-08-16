@@ -164,7 +164,7 @@ const PACKAGES = [
   },
   {
     name: "Scale",
-    price: "$8,300",
+    price: "$2,700",
     tag: "Most popular",
     features: [
       "Everything in Launch",
