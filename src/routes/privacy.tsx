@@ -55,12 +55,12 @@ function PrivacyPage() {
 
           <h2 className="mt-8 text-2xl font-extrabold text-navy">Your Rights</h2>
           <p className="mt-3 text-slate-600 leading-relaxed">
-            You can request a copy of the personal information we hold about you, ask us to correct it, or ask us to delete it. Email emmanuel@bookmarketingagency.pro and we will respond within 30 days.
+            You can request a copy of the personal information we hold about you, ask us to correct it, or ask us to delete it. Email emmanuel@hq360.space and we will respond within 30 days.
           </p>
 
           <h2 className="mt-8 text-2xl font-extrabold text-navy">Contact</h2>
           <p className="mt-3 text-slate-600 leading-relaxed">
-            Questions about this policy can be sent to emmanuel@bookmarketingagency.pro.
+            Questions about this policy can be sent to emmanuel@hq360.space.
           </p>
         </div>
       </section>

@@ -18,6 +18,9 @@ import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SubscribeSection } from "@/components/SubscribeSection";
 import { PastWorksTeaser } from "@/components/PastWorksTeaser";
+import { ManagingDirector } from "@/components/ManagingDirector";
+import { VerifiedStrip } from "@/components/VerifiedStrip";
+import { LeadPopup } from "@/components/LeadPopup";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -59,7 +62,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-brand/30 bg-emerald-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-brand">
             <Sparkles className="size-3.5" />
-            Trusted by 500+ authors worldwide
+            Verified results for 500+ authors worldwide
           </div>
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.05]">
             We Help Authors{" "}
@@ -90,7 +93,7 @@ function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
-            {["No lock in contracts", "ROI focused", "Full transparency"].map((t) => (
+            {["Verified results, never a test", "Fixed pricing from $400", "Reply within 24 hours"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-emerald-brand" />
                 {t}
@@ -371,8 +374,11 @@ function TestimonialsStrip() {
 function Index() {
   return (
     <>
+      <LeadPopup />
       <Hero />
       <Metrics />
+      <VerifiedStrip />
+      <ManagingDirector />
       <ServicesTeaser />
       <PastWorksTeaser />
       <TestimonialsStrip />

@@ -47,7 +47,7 @@ const SERVICES = [
       "Daily bid and budget optimization",
       "Weekly performance reports",
     ],
-    price: "From $1,000 / mo",
+    price: "From $400 / mo",
   },
   {
     icon: BarChart3,
@@ -59,7 +59,7 @@ const SERVICES = [
       "Landing page optimization",
       "ROAS focused optimization",
     ],
-    price: "From $1,300 / mo",
+    price: "From $550 / mo",
   },
   {
     icon: Megaphone,
@@ -71,7 +71,7 @@ const SERVICES = [
       "Content approval workflow",
       "Reach and sales attribution",
     ],
-    price: "From $1,800 / campaign",
+    price: "From $700 / campaign",
   },
   {
     icon: Mic,
@@ -83,7 +83,7 @@ const SERVICES = [
       "Interview prep",
       "Coverage tracking",
     ],
-    price: "From $1,600 / mo",
+    price: "From $650 / mo",
   },
   {
     icon: Palette,
@@ -95,7 +95,7 @@ const SERVICES = [
       "Two rounds of revision",
       "Print and eBook final files",
     ],
-    price: "From $650 / cover",
+    price: "From $350 / cover",
   },
   {
     icon: BookOpen,
@@ -107,7 +107,7 @@ const SERVICES = [
       "Custom chapter design",
       "Front and back matter setup",
     ],
-    price: "From $450 / title",
+    price: "From $250 / title",
   },
   {
     icon: Globe,
@@ -119,7 +119,7 @@ const SERVICES = [
       "Category and keyword strategy",
       "Pre order and launch week plan",
     ],
-    price: "From $1,400 / launch",
+    price: "From $600 / launch",
   },
   {
     icon: Mail,
@@ -131,14 +131,14 @@ const SERVICES = [
       "Reader magnet funnel",
       "Welcome and nurture sequences",
     ],
-    price: "From $2,200 / project",
+    price: "From $900 / project",
   },
 ];
 
 const PACKAGES = [
   {
     name: "Starter",
-    price: "$1,650",
+    price: "$400",
     tag: "For low budget and first time authors",
     features: [
       "30 day launch checklist",
@@ -151,7 +151,7 @@ const PACKAGES = [
   },
   {
     name: "Launch",
-    price: "$4,300",
+    price: "$1,200",
     tag: "Best for debut launches",
     features: [
       "90 day launch blueprint",
@@ -164,7 +164,7 @@ const PACKAGES = [
   },
   {
     name: "Scale",
-    price: "$8,300",
+    price: "$2,700",
     tag: "Most popular",
     features: [
       "Everything in Launch",
