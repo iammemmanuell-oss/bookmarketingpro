@@ -12,7 +12,7 @@ export function ManagingDirector() {
           <div className="relative overflow-hidden rounded-3xl border border-emerald-brand/30 bg-navy">
             <ResponsiveAssetImage
               src={mdPhoto}
-              alt="Emmanuel Durosinmi, Managing Director of Book Marketing Agency Pro"
+              alt="Fin Arche, CEO & Managing Director of Book Marketing Agency Pro"
               className="h-full w-full object-cover"
               loading="lazy"
               sizes="(max-width: 1024px) 90vw, 380px"
@@ -30,8 +30,8 @@ export function ManagingDirector() {
             Speak directly with the owner
           </div>
           <h2 className="mt-6 text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Emmanuel Durosinmi
-            <span className="block text-emerald-brand">Managing Director</span>
+            Fin Arche
+            <span className="block text-emerald-brand">CEO & Managing Director</span>
           </h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
             Every campaign we run is handled by a verified team and reported with real numbers. No test runs, no guesswork, no filler. When you reach out, you talk to me directly and leave with a clear plan for your book.
@@ -59,7 +59,7 @@ export function ManagingDirector() {
               </Button>
             </a>
             <a
-              href="https://wa.me/2349013693083?text=Hi%20Emmanuel%2C%20I%20want%20to%20market%20my%20book."
+              href="https://wa.me/2349013693083?text=Hi%20Fin%20Arche%2C%20I%20want%20to%20market%20my%20book."
               target="_blank"
               rel="noopener noreferrer"
             >
