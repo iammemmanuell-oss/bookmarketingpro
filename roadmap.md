@@ -1,0 +1,3 @@
+- [ ] Remove personal name and email contact references; direct every contact action to WhatsApp.
+- [ ] Improve homepage conversion messaging and route level search metadata without inventing proof.
+- [ ] Verify contact links, route metadata, and the preview build.
