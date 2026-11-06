@@ -1,13 +1,14 @@
-import { describe, expect, it } from "bun:test";
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
 import { createContactEmailUrl } from "./contact";
 
 describe("createContactEmailUrl", () => {
   it("opens a ready-to-send message addressed to the contact email", () => {
     const url = new URL(createContactEmailUrl("Book launch", "Hello Emmanuel"));
 
-    expect(url.protocol).toBe("mailto:");
-    expect(url.pathname).toBe("emmanuel@hq360.space");
-    expect(url.searchParams.get("subject")).toBe("Book launch");
-    expect(url.searchParams.get("body")).toBe("Hello Emmanuel");
+    assert.equal(url.protocol, "mailto:");
+    assert.equal(url.pathname, "emmanuel@hq360.space");
+    assert.equal(url.searchParams.get("subject"), "Book launch");
+    assert.equal(url.searchParams.get("body"), "Hello Emmanuel");
   });
 });
