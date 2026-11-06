@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
+import { createContactEmailUrl } from "@/lib/contact";
 
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
@@ -55,12 +56,12 @@ function PrivacyPage() {
 
           <h2 className="mt-8 text-2xl font-extrabold text-navy">Your Rights</h2>
           <p className="mt-3 text-slate-600 leading-relaxed">
-            You can request a copy of the personal information we hold about you, ask us to correct it, or ask us to delete it. Email emmanuel@hq360.space and we will respond within 30 days.
+            You can request a copy of the personal information we hold about you, ask us to correct it, or ask us to delete it. <a className="underline underline-offset-4" href={createContactEmailUrl("Privacy request", "Hello, I would like to make a privacy request.")}>Send us an email</a> and we will respond within 30 days.
           </p>
 
           <h2 className="mt-8 text-2xl font-extrabold text-navy">Contact</h2>
           <p className="mt-3 text-slate-600 leading-relaxed">
-            Questions about this policy can be sent to emmanuel@hq360.space.
+            Questions about this policy can be sent by <a className="underline underline-offset-4" href={createContactEmailUrl("Privacy policy question", "Hello, I have a question about the privacy policy.")}>email</a>.
           </p>
         </div>
       </section>

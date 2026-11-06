@@ -1,7 +1,8 @@
-import { BadgeCheck, PhoneCall, MessageCircle, ShieldCheck } from "lucide-react";
+import { BadgeCheck, PhoneCall, Mail, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ResponsiveAssetImage } from "@/components/ResponsiveAssetImage";
-import mdPhoto from "@/assets/managing-director.png.asset.json";
+import { createContactEmailUrl } from "@/lib/contact";
+import mdPhoto from "@/assets/managing-director-emmanuel.png.asset.json";
 
 export function ManagingDirector() {
   return (
@@ -12,7 +13,7 @@ export function ManagingDirector() {
           <div className="relative overflow-hidden rounded-3xl border border-emerald-brand/30 bg-navy">
             <ResponsiveAssetImage
               src={mdPhoto}
-              alt="Fin Arche, CEO & Managing Director of Book Marketing Agency Pro"
+              alt="Emmanuel, CEO and Managing Director of Book Marketing Agency Pro"
               className="h-full w-full object-cover"
               loading="lazy"
               sizes="(max-width: 1024px) 90vw, 380px"
@@ -30,7 +31,7 @@ export function ManagingDirector() {
             Speak directly with the owner
           </div>
           <h2 className="mt-6 text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Fin Arche
+            Emmanuel
             <span className="block text-emerald-brand">CEO & Managing Director</span>
           </h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
@@ -49,7 +50,7 @@ export function ManagingDirector() {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="mailto:emmanuel@hq360.space?subject=Book%20a%20Call%20with%20the%20Managing%20Director">
+            <a href={createContactEmailUrl("Book a call with the Managing Director", "Hello Emmanuel, I would like to discuss marketing my book.")}>
               <Button
                 size="lg"
                 className="h-12 px-7 bg-emerald-brand text-white hover:bg-emerald-brand/90 font-semibold text-base shadow-emerald"
@@ -59,17 +60,15 @@ export function ManagingDirector() {
               </Button>
             </a>
             <a
-              href="https://wa.me/2349013693083?text=Hi%20Fin%20Arche%2C%20I%20want%20to%20market%20my%20book."
-              target="_blank"
-              rel="noopener noreferrer"
+              href={createContactEmailUrl("Book marketing inquiry", "Hello Emmanuel, I would like to discuss marketing my book.")}
             >
               <Button
                 size="lg"
                 variant="outline"
                 className="h-12 px-7 bg-transparent border-emerald-brand/50 text-white hover:bg-emerald-brand/10 hover:text-white font-semibold text-base"
               >
-                <MessageCircle className="size-4" />
-                Send A Message On WhatsApp
+                <Mail className="size-4" />
+                Send Me An Email
               </Button>
             </a>
           </div>

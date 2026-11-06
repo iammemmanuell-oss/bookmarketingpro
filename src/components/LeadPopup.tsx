@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { X, BadgeCheck, ArrowRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { createContactEmailUrl } from "@/lib/contact";
 
 const SEEN_KEY = "bmap_lead_popup_seen";
 
@@ -83,7 +84,7 @@ export function LeadPopup() {
               </Button>
             </Link>
             <a
-              href="mailto:emmanuel@hq360.space?subject=Book%20a%20Call"
+              href={createContactEmailUrl("Book a call", "Hello Emmanuel, I would like to discuss marketing my book.")}
               className="flex-1"
               onClick={() => setOpen(false)}
             >

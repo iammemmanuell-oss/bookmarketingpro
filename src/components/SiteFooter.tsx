@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Twitter, Linkedin, Instagram, Mail, MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { createContactEmailUrl } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -15,7 +16,9 @@ export function SiteFooter() {
             <div className="mt-5 space-y-2 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <Mail className="size-4 text-emerald-brand" />
-                emmanuel@hq360.space
+                <a href={createContactEmailUrl("Book marketing inquiry", "Hello Emmanuel, I would like to discuss marketing my book.")} className="hover:text-white transition-colors">
+                  Send us an email
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="size-4 text-emerald-brand" />

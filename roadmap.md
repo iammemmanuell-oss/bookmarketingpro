@@ -1,3 +1,3 @@
-- [ ] Remove personal name and email contact references; direct every contact action to WhatsApp.
-- [ ] Improve homepage conversion messaging and route level search metadata without inventing proof.
-- [ ] Verify contact links, route metadata, and the preview build.
+- [ ] Replace the managing director portrait and name with the uploaded image and Emmanuel.
+- [ ] Route website contact actions and forms to a ready-to-send email addressed to emmanuel@hq360.space.
+- [ ] Verify contact links and the preview build.

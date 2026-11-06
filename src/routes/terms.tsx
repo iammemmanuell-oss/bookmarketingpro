@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
+import { createContactEmailUrl } from "@/lib/contact";
 
 export const Route = createFileRoute("/terms")({
   component: TermsPage,
@@ -65,7 +66,7 @@ function TermsPage() {
 
           <h2 className="mt-8 text-2xl font-extrabold text-navy">Contact</h2>
           <p className="mt-3 text-slate-600 leading-relaxed">
-            Questions about these terms can be sent to emmanuel@hq360.space.
+            Questions about these terms can be sent by <a className="underline underline-offset-4" href={createContactEmailUrl("Terms of service question", "Hello, I have a question about the terms of service.")}>email</a>.
           </p>
         </div>
       </section>

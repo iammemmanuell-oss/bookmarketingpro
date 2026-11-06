@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
+import { createContactEmailUrl } from "@/lib/contact";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -78,14 +79,10 @@ function ContactPage() {
       `Genre: ${genre}\n` +
       `Publishing Stage: ${currentStage}\n\n` +
       `Project Details:\n${details}\n`;
-    const mailto = `mailto:emmanuel@hq360.space?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
+    window.location.href = createContactEmailUrl(subject, body);
 
     setTimeout(() => {
-      toast.success("Your email app should now open. Hit send and we'll reply within 24 hours with your blueprint.");
+      toast.success("Your email app is ready. Send the message to request your blueprint.");
       setSubmitting(false);
     }, 400);
   };
@@ -108,7 +105,12 @@ function ContactPage() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-500">Email</div>
-                  <div className="font-bold text-navy">emmanuel@hq360.space</div>
+                  <a
+                    className="font-bold text-navy underline-offset-4 hover:underline"
+                    href={createContactEmailUrl("Book marketing inquiry", "Hello Emmanuel, I would like to discuss marketing my book.")}
+                  >
+                    Send us an email
+                  </a>
                 </div>
               </div>
             </Card>

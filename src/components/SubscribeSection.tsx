@@ -3,6 +3,7 @@ import { Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { createContactEmailUrl } from "@/lib/contact";
 
 export function SubscribeSection() {
   const [submitting, setSubmitting] = useState(false);
@@ -16,16 +17,14 @@ export function SubscribeSection() {
       return;
     }
     setSubmitting(true);
-    const subject = `New Author Subscribe — ${email}`;
+    const subject = `Author Insider List Signup: ${email}`;
     const body =
       `A new author wants to join the Book Marketing Agency Pro list.\n\n` +
       `Email: ${email}\n\n` +
       `Please add them to the insider list and send the welcome pack.`;
-    window.location.href = `mailto:emmanuel@hq360.space?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = createContactEmailUrl(subject, body);
     setTimeout(() => {
-      toast.success("Thanks! Send the email that just opened and we'll add you to the insider list.");
+      toast.success("Your email app is ready. Send the message to join the insider list.");
       (e.target as HTMLFormElement).reset();
       setSubmitting(false);
     }, 400);
